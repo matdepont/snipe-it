@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: snipeit-web
+    env: docker
+    repo: https://github.com/matdepont/snipe-it
+    branch: custom_validator_for_users
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://snipeit.onrender.com  # Remplace après déploiement
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-d0rhhmemcj7s7389ntk0-a
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: snipeit_db
+      - key: DB_USERNAME
+        value: snipeit_db_user
+      - key: DB_PASSWORD
+        value: 05ag2I6GDDAI4tpk6AKY746nCRPQ96zP
+      - key: MAIL_DRIVER
+        value: log
